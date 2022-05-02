@@ -391,9 +391,11 @@ input[type=text] {
   width: 50%;
   height: 4.5rem;
   margin: 1.5% 0;
+  background-color: #fff;
 }
 
 input[type=email] {
+  background-color: #fff;
   width: 100%;
   height: 4.5rem;
   margin: 1.5% 0;
@@ -403,6 +405,7 @@ textarea {
   width: 100%;
   height: 10rem;
   margin: 1.5% 0;
+  background-color: #fff;
 }
 
 input::placeholder,
@@ -511,10 +514,8 @@ textarea::placeholder {
   }
 
   .showmenu {
-    position: fixed;
     transform: translateY(0);
     transition: transform 3s;
-    width: 100vw;
     display: block;
   }
 
