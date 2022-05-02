@@ -514,10 +514,8 @@ textarea::placeholder {
   }
 
   .showmenu {
-    position: fixed;
     transform: translateY(0);
     transition: transform 3s;
-    width: 100vw;
     display: block;
   }
 
