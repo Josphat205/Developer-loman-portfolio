@@ -15,6 +15,7 @@ font-family: 'Oswald', sans-serif; */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #191765;
+  overflow-x: hidden;
 }
 
 section {
@@ -27,7 +28,14 @@ h1 {
 }
 
 h2 {
+  color: #fff;
   font-size: 2.9rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.6rem;
+  margin: 5px 0;
   font-weight: 700;
 }
 
@@ -36,6 +44,11 @@ h4,
 h5 {
   color: #fff;
   font-weight: normal;
+}
+
+.career {
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 h3 {
@@ -334,7 +347,7 @@ nav ul li a:hover {
 }
 
 .btn {
-  background-color: #9390ff;
+  background-color: #1710ec;
   color: #fff;
   padding: 3.3% 5%;
   margin: 2% 0;
