@@ -293,30 +293,6 @@ nav ul li a:hover {
   grid-area: image1;
 }
 
-/*
-.img1, .img2, .img3, .img4{
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-} */
-
-/* .img1{
-  background-image: url(img/a.jpg);
-}
-
-.img2{
-  background-image: url(img/b.jpg);
-}
-
-.img3{
-  background-image: url(img/c.jpg);
-}
-
-.img4{
-  background-image: url(img/d.jpg);
-} */
-
 .feature-content {
   margin-top: 6%;
   grid-area: content1;
@@ -457,14 +433,9 @@ textarea::placeholder {
 
 /* ----------media query-------- */
 @media only screen and (max-width: 768px) {
-  /* phones [601px -> 1200px] */
   nav {
     width: 100vw;
     flex-wrap: wrap;
-
-    /* height: 100vh; */
-
-    /* position: fixed; */
     flex-direction: column;
   }
 
@@ -560,8 +531,9 @@ textarea::placeholder {
 
   .showmenu {
     transform: translateY(0);
-    transition: transform 3s;
+    transition: transform 1s;
     display: block;
+    width: 100%;
   }
 
   .closemenu {
