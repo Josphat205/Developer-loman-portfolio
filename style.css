@@ -453,19 +453,23 @@ textarea::placeholder {
   }
 
   .circle1 {
-    width: 160px;
-    height: 160px;
-    left: -106px;
-    top: 10px;
-    display: none;
+    width: 220px;
+    height: 200px;
+    left: -156px;
+    top: 170px;
+    display: block;
+    z-index:777;
+    opacity: .6;
   }
 
   .circle2 {
-    width: 68px;
-    height: 68px;
-    left: 339px;
+    width: 108px;
+    height: 268px;
+    left: 300px;
     top: 495px;
-    display: none;
+    display: block;
+    z-index: 999;
+    opacity: 1;
   }
 
   .my-name {
@@ -480,7 +484,7 @@ textarea::placeholder {
     width: 100%;
     height: 100vh;
     background-color: #191765;
-    box-shadow: var(--shadow);
+    /* box-shadow: var(--shadow); */
     transition: transform 1s linear;
     transform: translateY(-200%);
     z-index: 1000;
