@@ -16,15 +16,16 @@
             <div class="logo">
              <a href="index.html"><h2 class="hero">Mloman</h2></a>
             </div>
-            <div class="hambuger">
-                <ion-icon class="ion-icon hambuger" name="menu-outline" id="menu"></ion-icon>
+            <div class="hambuger-menu">
+                <i class="fa-solid fa-bars" id="menu"></i>
+                <!-- <i class="fa-solid fa-xmark hambuger" id="close"></i> -->
             </div>
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Portfolio</a></li>  
-                <li><a href="">Contact</a></li>
-                <li><a href=""><ion-icon class="ion-icon mail" name="mail-outline"></ion-icon></a></li>
+                <li><a href="#">Home</a><i class="fa-solid fa-greater-than"></i></li>
+                <li><a href="#about">About</a><i class="fa-solid fa-greater-than"></i></li>
+                <li><a href="#portfolio">Portfolio</a><i class="fa-solid fa-greater-than"></i></li>  
+                <li><a href="#contact">Contact</a><i class="fa-solid fa-greater-than"></i></li>
+                <li><a href="#"><ion-icon class="ion-icon mail" name="mail-outline"></ion-icon></a></li>
             </ul>
         </nav>
         <div class="main-section">
@@ -35,7 +36,7 @@
         </div>
         <div class="circle1"></div>
         <div class="circle2"></div>
-        <div class="my-description">
+        <div class="my-description" id="about">
             <p>I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.</p>
             <img src="img/v.png" alt="horizontal-line" class="horiline">
             <div class="my-skills">
@@ -86,7 +87,7 @@
             </div>
         </div>
     </header>
-    <section class="main-main">
+    <section class="main-main" id="portfolio">
         <div class="main-container">
             <div class="frame1">
              <h2 class="my-name">My Recent Work</h2>        
@@ -172,7 +173,7 @@
             </div>
         </div>
     </section>
-    <section class="contact">
+    <section class="contact" id="contact">
         <div class="contact-us">
             <div class="contact-title">
                 <h2 class="my-name">Lets Chat</h2>
@@ -202,6 +203,7 @@
             <h5 class="my-mail">jloman200@gmail.com</h5>
             <img src="img/Shape.png" alt="" class="line">
         </div>
+    <script src="https://kit.fontawesome.com/5b237087d4.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
