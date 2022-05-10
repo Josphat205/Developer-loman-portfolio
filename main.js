@@ -14,6 +14,17 @@ menubar.addEventListener("click", () => {
   }
 });
 
+function hide_menu() {
+  nav.addEventListener("click", () => {
+    nav.classList.toggle("showmenu");
+    hero.style.display = "block";
+    nav.style.display = "none";
+    menubar.classList.replace("fa-xmark", "fa-bars");
+  });
+}
+
+hide_menu();
+
 window.addEventListener("scroll", () => {
   document
     .querySelector("nav")
