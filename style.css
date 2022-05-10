@@ -9,7 +9,7 @@ font-family: 'Oswald', sans-serif; */
 }
 
 :root {
-  --shadow: 0 1px 5px rgba(202, 195, 195, 0.8);
+  --shadow: 0 1px 5px rgba(34, 9, 105, 0.8);
 }
 
 body {
@@ -124,6 +124,10 @@ nav .hambuger {
   color: #fff;
   display: none;
   padding: 1rem 0;
+}
+
+.hambuger-menu {
+  display: none;
 }
 
 .ion-icon {
@@ -267,10 +271,6 @@ nav ul li a:hover {
   margin: auto;
   width: 80%;
   margin-top: 15%;
-}
-
-.frame1 {
-  margin-top: 3% 0;
 }
 
 .frame2 {
@@ -456,16 +456,16 @@ textarea::placeholder {
   /* phones [601px -> 1200px] */
   nav {
     width: 100vw;
-    height: 6rem;
-    position: fixed;
+    flex-wrap: wrap;
+
+    /* height: 100vh; */
+
+    /* position: fixed; */
     flex-direction: column;
   }
 
-  nav .hambuger {
+  .hambuger-menu {
     display: block;
-    position: absolute;
-    right: 32px;
-    top: 0;
   }
 
   .logo {
@@ -493,32 +493,55 @@ textarea::placeholder {
   }
 
   nav ul {
-    margin: 2% 1%;
+    margin: 3% 0%;
+    margin-top: 15%;
     border-radius: 5px;
-    position: relative;
-    display: none;
+    display: block;
     width: 100%;
-    background-color: rgb(252, 249, 249);
+    height: 100vh;
+    background-color: #191765;
     box-shadow: var(--shadow);
-    transition: all 3s;
-    transform: translateY(-250px);
+    transition: transform 1s linear;
+    transform: translateY(-200%);
     z-index: 1000;
   }
 
-  nav ul li {
-    text-align: center;
-    padding: 3% 0;
+  #close {
+    display: none;
+  }
+
+  #menu {
     display: block;
+    position: absolute;
+    right: 32px;
+    top: 20px;
+    font-size: 25px;
+    color: white;
+  }
+
+  .mail {
+    display: none;
+  }
+
+  nav ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 3% 1%;
+    line-height: 60px;
+  }
+
+  .fa-greater-than {
+    font-size: 24px;
+    color: #acb7c3;
   }
 
   nav ul li a {
     font-size: 1.8rem;
-    transition: all 0.6s ease-out;
-    color: #000;
-  }
-
-  .mail {
-    color: #000;
+    transition: all 0.6s linear;
+    color: #fff;
   }
 
   nav ul li a:hover {
@@ -532,12 +555,18 @@ textarea::placeholder {
     display: block;
   }
 
+  .closemenu {
+    transform: translateY(-200%);
+    transition: transform 3s;
+    display: block;
+  }
+
   .title-section {
     width: 100%;
   }
 
   .my-description {
-    width: 100%;
+    width: 90%;
     padding: 0 5%;
   }
 
