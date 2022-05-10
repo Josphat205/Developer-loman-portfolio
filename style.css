@@ -484,6 +484,7 @@ textarea::placeholder {
     transition: transform 1s linear;
     transform: translateY(-200%);
     z-index: 1000;
+    padding-bottom: 400px;
   }
 
   #close {
@@ -510,7 +511,8 @@ textarea::placeholder {
     align-items: center;
     text-align: left;
     padding: 3% 1%;
-    line-height: 60px;
+    line-height: 40px;
+    cursor: pointer;
   }
 
   .fa-greater-than {
