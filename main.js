@@ -26,3 +26,79 @@ window.addEventListener('scroll', () => {
     .querySelector('nav')
     .classList.toggle('screen-scroll', window.scrollY > 0);
 });
+
+const projects = [
+  {
+    name: 'Multi-post stories',
+    image: 'img/a.jpg',
+    description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text",
+    technologies: ['Html', 'Css', 'Bootstrap', 'Ruby'],
+    liveLink: 'https://josphat205.github.io/SmartDeveloper/',
+    githubLink: 'https://github.com/Josphat205/SmartDeveloper',
+  },
+  {
+    name: 'Multi-post stories',
+    image: 'img/b.jpg',
+    description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text",
+    technologies: ['Html', 'Css', 'Bootstrap', 'Ruby'],
+    liveLink: 'https://josphat205.github.io/SmartDeveloper/',
+    githubLink: 'https://github.com/Josphat205/SmartDeveloper',
+  },
+  {
+    name: 'Multi-post stories',
+    image: 'img/c.jpg',
+    description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text",
+    technologies: ['Html', 'Css', 'Bootstrap', 'Ruby'],
+    liveLink: 'https://josphat205.github.io/SmartDeveloper/',
+    githubLink: 'https://github.com/Josphat205/SmartDeveloper',
+  },
+  {
+    name: 'Multi-post stories',
+    image: 'img/d.jpg',
+    description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text",
+    technologies: ['Html', 'Css', 'Bootstrap', 'Ruby'],
+    liveLink: 'https://josphat205.github.io/SmartDeveloper/',
+    githubLink: 'https://github.com/Josphat205/SmartDeveloper',
+  },
+];
+
+const demo = document.getElementById('demo');
+demo.innerHTML = projects.reduce((output, project) => (
+  `${output
+  }
+  <div class="feature ft3">
+    <div class="images img3">
+      <img
+        src="${project.image}"
+        alt="project-image"
+      />
+    </div>
+    <div class="feature-content">
+      <h3 class="story-tt">${project.name}</h3>
+      <p>
+        ${project.description}
+      </p>
+      <div class="row3 lang">
+      ${project.technologies.map((x) => `<h4 class="sk">${x}</h4><span> <img src="img/Rectangle.png" alt="css" /></span>`)}
+      </div>
+      <button class="btn" id="btnClick" data-open ="mod1" type="button">See Project</button>
+    </div>
+  </div>
+  `
+), '');
+
+const closeBtn = document.querySelector('#modal-close');
+const btn = document.querySelectorAll('[data-open]');
+const popupModal = document.querySelector('#mod1');
+const overlay = document.querySelector('.popup-overlay');
+
+btn.forEach((btnC) => {
+  btnC.addEventListener('click', () => {
+    popupModal.style.display = 'block';
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  popupModal.style.display = 'none';
+  overlay.style.display = 'none';
+});
