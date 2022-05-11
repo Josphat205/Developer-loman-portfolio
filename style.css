@@ -452,14 +452,14 @@ textarea::placeholder {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  z-index: 100;
   display: none;
 }
 
 .popup {
   margin: 10px 0;
   position: fixed;
-  top: -40%;
+  top: -38%;
   left: 50%;
   transform: translate(-50%, 50%);
   width: 90%;
@@ -520,12 +520,13 @@ textarea::placeholder {
 
 .img-popup-div {
   width: 100%;
-  height: 230px;
+  height: 240px;
 }
 
 .img-popup-div > img {
   width: 100%;
-  height: 230px;
+  height: 240px;
+  object-fit: fill;
 }
 
 .buttons {
@@ -540,8 +541,10 @@ textarea::placeholder {
   margin: 0 15px;
 }
 
-.isvisible {
-  display: block;
+.fa-arrow-circle-right,
+.fa-github {
+  font-size: 20px;
+  margin: 0 10px;
 }
 
 /* ----------model end-------- */
@@ -754,17 +757,17 @@ textarea::placeholder {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
     display: none;
   }
 
   .popup {
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 0 2px;
     position: fixed;
-    margin-left: -20px;
-    top: -30%;
+    margin-left: -27px;
+    top: -32%;
     transform: translate(-50%, 50%);
     width: 80%;
     background-color: #191765;
@@ -825,15 +828,15 @@ textarea::placeholder {
 
   .img-popup-div {
     width: 100%;
-    height: 230px;
+    height: 190px;
     justify-content: center;
     text-align: center;
   }
 
   .img-popup-div > img {
-    width: 97%;
-    height: 230px;
-    margin: 0 auto;
+    width: 100%;
+    height: 180px;
+    margin: 5px auto;
   }
 
   .buttons {
@@ -847,5 +850,10 @@ textarea::placeholder {
   .buttons > * {
     margin: 10px 10px;
     padding: 10px 20px;
+  }
+
+  .btn1 {
+    font-size: 13px;
+    font-style: normal;
   }
 }
