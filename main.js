@@ -103,3 +103,77 @@ closeBtn.addEventListener('click', () => {
   popupModal.style.display = 'none';
   overlay.style.display = 'none';
 });
+
+const nameError = document.querySelector('.fname-error');
+const emailError = document.querySelector('.email-error');
+const messageError = document.querySelector('.message-error');
+const submitError = document.querySelector('.submit-error');
+const successN = document.querySelector('#successN');
+const successE = document.querySelector('#successE');
+const successM = document.querySelector('#successM');
+
+function validateName() {
+  const nameVal = document.querySelector('#fname').value;
+  if (nameVal.length === 0) {
+    nameError.innerHTML = 'FullName is Required';
+    successN.innerHTML = '';
+    return false;
+  }
+  if (!nameVal.match(/^[a-zA-Z]+ [a-zA-Z]+$/)) {
+    nameError.innerHTML = 'Please Enter Fullnames';
+    successN.innerHTML = '';
+    return false;
+  }
+  nameError.innerHTML = '';
+  successN.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+  return true;
+}
+
+function validateEmail() {
+  const emailVal = document.querySelector('#email').value;
+  if (emailVal.length === 0) {
+    emailError.innerHTML = 'Email is Required';
+    successE.innerHTML = '';
+    return false;
+  }
+
+  if (emailVal !== emailVal.toLowerCase()) {
+    emailError.innerHTML = 'Invalid email adress (lowercase only)';
+    successE.innerHTML = '';
+    return false;
+  }
+
+  if (!emailVal.match(/^[a-z+|]+@+[a-z\-0-9]+(.com)$/i)) {
+    emailError.innerHTML = 'Enter valid Email';
+    successE.innerHTML = '';
+    return false;
+  }
+  emailError.innerHTML = '';
+  successE.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+  return true;
+}
+
+function validateMessage() {
+  const messageVal = document.querySelector('#message').value;
+  const required = 30;
+  const left = required - messageVal.length;
+  if (left > 0) {
+    messageError.innerHTML = `${left} More characters is Required`;
+    successE.innerHTML = ' ';
+    return false;
+  }
+  messageError.innerHTML = '';
+  successM.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+  return true;
+}
+
+function validateForm() {
+  if (!validateName() || !validateEmail() || !validateMessage()) {
+    submitError.style.display = 'block';
+    submitError.innerHTML = 'Please fix the errors first before submit';
+    setTimeout(() => { submitError.style.display = 'none'; }, 3000);
+    return false;
+  }
+  return true;
+}
+validateForm();
