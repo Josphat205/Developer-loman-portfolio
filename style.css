@@ -537,7 +537,7 @@ textarea::placeholder {
   margin: 5px 0;
 }
 
-.btn1{
+.btn1 {
   padding: 10px 3px;
 }
 
@@ -829,11 +829,11 @@ textarea::placeholder {
     z-index: 1000;
   }
 
-  .sk{
+  .sk {
     font-size: 15px;
   }
 
-  .descrption-div p{
+  .descrption-div p {
     font-size: 13px;
   }
 
