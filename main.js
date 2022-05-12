@@ -95,6 +95,7 @@ const overlay = document.querySelector('.popup-overlay');
 btn.forEach((btnC) => {
   btnC.addEventListener('click', () => {
     popupModal.style.display = 'block';
+    overlay.style.display = 'block';
   });
 });
 

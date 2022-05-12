@@ -459,10 +459,10 @@ textarea::placeholder {
 .popup {
   margin: 10px 0;
   position: fixed;
-  top: -45%;
+  top: -42%;
   left: 50%;
   transform: translate(-50%, 50%);
-  width: 90%;
+  width: 80%;
   background: rgba(255, 255, 255, 0.16);
   border: 1px solid #fff;
   box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
@@ -530,7 +530,7 @@ textarea::placeholder {
 }
 
 .buttons {
-  width: 40%;
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -583,6 +583,7 @@ textarea::placeholder {
   }
 
   .circle1 {
+    position: fixed;
     width: 220px;
     height: 200px;
     left: -156px;
@@ -593,6 +594,7 @@ textarea::placeholder {
   }
 
   .circle2 {
+    position: fixed;
     width: 148px;
     height: 268px;
     left: 280px;
@@ -766,8 +768,7 @@ textarea::placeholder {
     margin: 0 auto;
     padding: 0 2px;
     position: fixed;
-    margin-left: -27px;
-    top: -32%;
+    top: -35%;
     transform: translate(-50%, 50%);
     width: 80%;
     background-color: #191765;
@@ -855,5 +856,11 @@ textarea::placeholder {
   .btn1 {
     font-size: 13px;
     font-style: normal;
+  }
+
+  .fa-arrow-circle-right,
+  .fa-github {
+    font-size: 20px;
+    margin: 0 10px;
   }
 }
