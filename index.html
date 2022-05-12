@@ -142,14 +142,26 @@
                 <p>If you have an application you are interested in developing, a feature that you need built or a project that needs coding. I’d love to help with it </p>
             </div>
             <div class="my-form">
-                <form action="https://formspree.io/f/mdobpppd" method="post">
-                    <div class="names">
-                        <input type="text" placeholder="Enter Firstnane" name="fname" required>
-                        <input type="text" placeholder="Enter Lastname" name="lname" required>
+                <form action="https://formspree.io/f/mdobpppd" method="post" id="form">
+                   <div class="input-group">
+                    <input type="text" name="fname" id="fname" placeholder="Enter your full names" onkeyup="validateName()">
+                    <span id="successN" class="tick"></span>
+                    <span class="err-btn fname-error"></span>
+                   </div>
+                   <div class="input-group">
+                    <input type="email" name="email" id="email"  placeholder="Youremail@gmail.com" onkeyup="validateEmail()">
+                    <span id="successE" class="tick"></span>
+                    <span class="err-btn email-error"></span>
+                   </div>
+                    <div class="input-group">
+                        <textarea name="message" id="message" placeholder="Enter your message here..." onkeyup="validateMessage()"></textarea>
+                        <span id="successM" class="tick"></span>
+                    <span class="err-btn message-error"></span>
                     </div>
-                    <input type="email" name="email"  placeholder="Youremail@gmail.com" required>
-                    <textarea name="message" placeholder="Enter your message here..." required></textarea>
-                    <button type="submit" class="btn">Send message</button>
+                    <button type="submit" onclick=" return validateForm()" class="btn">Send message</button>
+                   <div class="input-group">
+                    <span class="err-btn  submit-error"></span>
+                   </div>
                 </form>
             </div>
         </div>
