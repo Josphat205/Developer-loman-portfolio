@@ -383,20 +383,46 @@ nav ul li a:hover {
   width: 100%;
 }
 
+.input-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 form {
   display: block;
   text-align: center;
 }
 
-.names {
-  display: flex;
-  gap: 0.5rem;
+.err-btn {
+  font-size: 13px;
+  color: red;
+  top: 21px;
+  right: 10px;
+  position: absolute;
+}
+
+.tick {
+  position: absolute;
+  color: #0ab507;
+  margin-top: 21px;
+  right: 3%;
+}
+
+.tick i {
+  font-size: 20px;
+}
+
+.submit-error {
+  font-size: 18px;
+  margin-top: 0;
+  text-align: center;
 }
 
 input[type="text"] {
-  width: 50%;
+  width: 100%;
   height: 4.5rem;
-  margin: 1.5% 0;
+  margin-top: 1.5%;
   background-color: #fff;
 }
 
@@ -404,13 +430,13 @@ input[type="email"] {
   background-color: #fff;
   width: 100%;
   height: 4.5rem;
-  margin: 1.5% 0;
+  margin-top: 1.5%;
 }
 
 textarea {
   width: 100%;
   height: 10rem;
-  margin: 1.5% 0;
+  margin-top: 1.5%;
   background-color: #fff;
 }
 
@@ -564,6 +590,21 @@ textarea::placeholder {
     height: 60px;
     margin: 0;
     padding: 0;
+  }
+
+  .tick {
+    position: absolute;
+    color: #0ab507;
+    margin-top: 21px;
+    right: 4%;
+  }
+
+  .tick i {
+    font-size: 20px;
+  }
+
+  .err-btn {
+    font-size: 10px;
   }
 
   .hambuger-menu {
@@ -754,6 +795,11 @@ textarea::placeholder {
 
   .line {
     display: block;
+  }
+
+  .submit-error {
+    font-size: 15px;
+    margin-top: 0;
   }
 
   /* =============modal ============== */
