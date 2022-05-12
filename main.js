@@ -131,15 +131,15 @@ function validateName() {
 
 function validateEmail() {
   const emailVal = document.querySelector('#email').value;
-  if (emailVal.length === 0) {    
+  if (emailVal.length === 0) {
     emailError.innerHTML = 'Email is Required';
     successE.innerHTML = '';
     return false;
   }
 
-  if(emailVal != emailVal.toLowerCase()){
+  if (emailVal !== emailVal.toLowerCase()) {
     emailError.innerHTML = 'Invalid email adress (lowercase only)';
-    successE.innerHTML ='';
+    successE.innerHTML = '';
     return false;
   }
 
