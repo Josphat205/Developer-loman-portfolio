@@ -151,7 +151,10 @@ function validateEmail() {
   emailError.innerHTML = '';
   successE.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
   return true;
+  echo successE;
 }
+
+
 
 function validateMessage() {
   const messageVal = document.querySelector('#message').value;
@@ -166,6 +169,8 @@ function validateMessage() {
   successM.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
   return true;
 }
+
+let bugs = "";
 
 function validateForm() {
   if (!validateName() || !validateEmail() || !validateMessage()) {
