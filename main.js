@@ -31,7 +31,8 @@ const projects = [
   {
     name: 'Multi-post stories',
     image: 'img/a.jpg',
-    description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text",
+    description:
+      "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text",
     technologies: ['Html', 'Css', 'Bootstrap', 'Ruby'],
     liveLink: 'https://josphat205.github.io/SmartDeveloper/',
     githubLink: 'https://github.com/Josphat205/SmartDeveloper',
@@ -39,7 +40,8 @@ const projects = [
   {
     name: 'Multi-post stories',
     image: 'img/b.jpg',
-    description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text",
+    description:
+      "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text",
     technologies: ['Html', 'Css', 'Bootstrap', 'Ruby'],
     liveLink: 'https://josphat205.github.io/SmartDeveloper/',
     githubLink: 'https://github.com/Josphat205/SmartDeveloper',
@@ -47,7 +49,8 @@ const projects = [
   {
     name: 'Multi-post stories',
     image: 'img/c.jpg',
-    description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text",
+    description:
+      "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text",
     technologies: ['Html', 'Css', 'Bootstrap', 'Ruby'],
     liveLink: 'https://josphat205.github.io/SmartDeveloper/',
     githubLink: 'https://github.com/Josphat205/SmartDeveloper',
@@ -55,7 +58,8 @@ const projects = [
   {
     name: 'Multi-post stories',
     image: 'img/d.jpg',
-    description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text",
+    description:
+      "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text",
     technologies: ['Html', 'Css', 'Bootstrap', 'Ruby'],
     liveLink: 'https://josphat205.github.io/SmartDeveloper/',
     githubLink: 'https://github.com/Josphat205/SmartDeveloper',
@@ -63,9 +67,8 @@ const projects = [
 ];
 
 const demo = document.getElementById('demo');
-demo.innerHTML = projects.reduce((output, project) => (
-  `${output
-  }
+demo.innerHTML = projects.reduce(
+  (output, project) => `${output}
   <div class="feature ft3">
     <div class="images img3">
       <img
@@ -79,13 +82,16 @@ demo.innerHTML = projects.reduce((output, project) => (
         ${project.description}
       </p>
       <div class="row3 lang">
-      ${project.technologies.map((x) => `<h4 class="sk">${x}</h4><span> <img src="img/Rectangle.png" alt="css" /></span>`)}
+      ${project.technologies.map(
+    (x) => `<h4 class="sk">${x}</h4><span> <img src="img/Rectangle.png" alt="css" /></span>`,
+  )}
       </div>
       <button class="btn" id="btnClick" data-open ="mod1" type="button">See Project</button>
     </div>
   </div>
-  `
-), '');
+  `,
+  '',
+);
 
 const closeBtn = document.querySelector('#modal-close');
 const btn = document.querySelectorAll('[data-open]');
@@ -111,18 +117,48 @@ const submitError = document.querySelector('.submit-error');
 const successN = document.querySelector('#successN');
 const successE = document.querySelector('#successE');
 const successM = document.querySelector('#successM');
+const fname = document.querySelector('#fname');
+const emailN = document.querySelector('#email');
+const messageV = document.querySelector('#message');
+const dataform = document.getElementById('form');
+/*= =============localstorage============= */
+function storeData() {
+  dataform.addEventListener('input', () => {
+    const dataInput = {
+      userName: fname.value,
+      userEmail: emailN.value,
+      message: messageV.value,
+    };
+    localStorage.setItem('dataInput', JSON.stringify(dataInput));
+  });
+}
 
+function deserialize() {
+  const loadData = JSON.parse(localStorage.getItem('dataInput'));
+  fname.value = loadData.userName;
+  emailN.value = loadData.userEmail;
+  messageV.value = loadData.message;
+}
+storeData();
+deserialize();
+
+/*= =============localstorage============= */
 function validateName() {
-  const nameVal = document.querySelector('#fname').value;
+  const nameVal = fname.value;
   if (nameVal.length === 0) {
-    nameError.innerHTML = 'FullName is Required';
+    nameError.innerHTML = '';
     successN.innerHTML = '';
     return false;
   }
   if (!nameVal.match(/^[a-zA-Z]+ [a-zA-Z]+$/)) {
+    nameError.innerHTML = '';
     nameError.innerHTML = 'Please Enter Fullnames';
     successN.innerHTML = '';
     return false;
+  }
+  if (nameVal.match(/^[a-zA-Z]+ [a-zA-Z]+$/) && nameVal.length > 0) {
+    nameError.innerHTML = '';
+    successN.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
   }
   nameError.innerHTML = '';
   successN.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
@@ -130,7 +166,7 @@ function validateName() {
 }
 
 function validateEmail() {
-  const emailVal = document.querySelector('#email').value;
+  const emailVal = emailN.value;
   if (emailVal.length === 0) {
     emailError.innerHTML = 'Email is Required';
     successE.innerHTML = '';
@@ -154,7 +190,7 @@ function validateEmail() {
 }
 
 function validateMessage() {
-  const messageVal = document.querySelector('#message').value;
+  const messageVal = messageV.value;
   const required = 30;
   const left = required - messageVal.length;
   if (left > 0) {
@@ -164,6 +200,7 @@ function validateMessage() {
   }
   messageError.innerHTML = '';
   successM.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+
   return true;
 }
 
@@ -171,7 +208,9 @@ function validateForm() {
   if (!validateName() || !validateEmail() || !validateMessage()) {
     submitError.style.display = 'block';
     submitError.innerHTML = 'Please fix the errors first before submit';
-    setTimeout(() => { submitError.style.display = 'none'; }, 3000);
+    setTimeout(() => {
+      submitError.style.display = 'none';
+    }, 3000);
     return false;
   }
   return true;
