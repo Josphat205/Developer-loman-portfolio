@@ -179,7 +179,7 @@ function validateEmail() {
     return false;
   }
 
-  if (!emailVal.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+  if (!emailVal.match(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/)) {
     emailError.innerHTML = 'Enter valid Email';
     successE.innerHTML = '';
     return false;
@@ -195,7 +195,7 @@ function validateMessage() {
   const left = required - messageVal.length;
   if (left > 0) {
     messageError.innerHTML = `${left} More characters is Required`;
-    successE.innerHTML = ' ';
+    successE.innerHTML = '';
     return false;
   }
   messageError.innerHTML = '';
