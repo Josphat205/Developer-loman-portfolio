@@ -1,72 +1,72 @@
-const menubar = document.querySelector('#menu');
-const hero = document.querySelector('.hero');
-const nav = document.querySelector('nav ul');
+const menubar = document.querySelector("#menu");
+const hero = document.querySelector(".hero");
+const nav = document.querySelector("nav ul");
 
-menubar.addEventListener('click', () => {
-  if (menubar.classList.contains('fa-bars')) {
-    nav.classList.toggle('showmenu');
-    menubar.classList.replace('fa-bars', 'fa-xmark');
-    hero.style.display = 'none';
+menubar.addEventListener("click", () => {
+  if (menubar.classList.contains("fa-bars")) {
+    nav.classList.toggle("showmenu");
+    menubar.classList.replace("fa-bars", "fa-xmark");
+    hero.style.display = "none";
   } else {
-    menubar.classList.replace('fa-xmark', 'fa-bars');
-    nav.classList.toggle('showmenu');
-    hero.style.display = 'block';
+    menubar.classList.replace("fa-xmark", "fa-bars");
+    nav.classList.toggle("showmenu");
+    hero.style.display = "block";
   }
 });
 
-nav.addEventListener('click', () => {
-  nav.classList.toggle('showmenu');
-  nav.style.display = 'hidden';
-  menubar.classList.replace('fa-xmark', 'fa-bars');
-  hero.style.display = 'block';
+nav.addEventListener("click", () => {
+  nav.classList.toggle("showmenu");
+  nav.style.display = "hidden";
+  menubar.classList.replace("fa-xmark", "fa-bars");
+  hero.style.display = "block";
 });
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   document
-    .querySelector('nav')
-    .classList.toggle('screen-scroll', window.scrollY > 0);
+    .querySelector("nav")
+    .classList.toggle("screen-scroll", window.scrollY > 0);
 });
 
 const projects = [
   {
-    name: 'Multi-post stories',
-    image: 'img/a.jpg',
+    name: "Multi-post stories",
+    image: "img/a.jpg",
     description:
       "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text",
-    technologies: ['Html', 'Css', 'Bootstrap', 'Ruby'],
-    liveLink: 'https://josphat205.github.io/SmartDeveloper/',
-    githubLink: 'https://github.com/Josphat205/SmartDeveloper',
+    technologies: ["Html", "Css", "Bootstrap", "Ruby"],
+    liveLink: "https://josphat205.github.io/SmartDeveloper/",
+    githubLink: "https://github.com/Josphat205/SmartDeveloper",
   },
   {
-    name: 'Multi-post stories',
-    image: 'img/b.jpg',
+    name: "Multi-post stories",
+    image: "img/b.jpg",
     description:
       "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text",
-    technologies: ['Html', 'Css', 'Bootstrap', 'Ruby'],
-    liveLink: 'https://josphat205.github.io/SmartDeveloper/',
-    githubLink: 'https://github.com/Josphat205/SmartDeveloper',
+    technologies: ["Html", "Css", "Bootstrap", "Ruby"],
+    liveLink: "https://josphat205.github.io/SmartDeveloper/",
+    githubLink: "https://github.com/Josphat205/SmartDeveloper",
   },
   {
-    name: 'Multi-post stories',
-    image: 'img/c.jpg',
+    name: "Multi-post stories",
+    image: "img/c.jpg",
     description:
       "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text",
-    technologies: ['Html', 'Css', 'Bootstrap', 'Ruby'],
-    liveLink: 'https://josphat205.github.io/SmartDeveloper/',
-    githubLink: 'https://github.com/Josphat205/SmartDeveloper',
+    technologies: ["Html", "Css", "Bootstrap", "Ruby"],
+    liveLink: "https://josphat205.github.io/SmartDeveloper/",
+    githubLink: "https://github.com/Josphat205/SmartDeveloper",
   },
   {
-    name: 'Multi-post stories',
-    image: 'img/d.jpg',
+    name: "Multi-post stories",
+    image: "img/d.jpg",
     description:
       "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text",
-    technologies: ['Html', 'Css', 'Bootstrap', 'Ruby'],
-    liveLink: 'https://josphat205.github.io/SmartDeveloper/',
-    githubLink: 'https://github.com/Josphat205/SmartDeveloper',
+    technologies: ["Html", "Css", "Bootstrap", "Ruby"],
+    liveLink: "https://josphat205.github.io/SmartDeveloper/",
+    githubLink: "https://github.com/Josphat205/SmartDeveloper",
   },
 ];
 
-const demo = document.getElementById('demo');
+const demo = document.getElementById("demo");
 demo.innerHTML = projects.reduce(
   (output, project) => `${output}
   <div class="feature ft3">
@@ -83,58 +83,59 @@ demo.innerHTML = projects.reduce(
       </p>
       <div class="row3 lang">
       ${project.technologies.map(
-    (x) => `<h4 class="sk">${x}</h4><span> <img src="img/Rectangle.png" alt="css" /></span>`,
-  )}
+        (x) =>
+          `<h4 class="sk">${x}</h4><span> <img src="img/Rectangle.png" alt="css" /></span>`
+      )}
       </div>
       <button class="btn" id="btnClick" data-open ="mod1" type="button">See Project</button>
     </div>
   </div>
   `,
-  '',
+  ""
 );
 
-const closeBtn = document.querySelector('#modal-close');
-const btn = document.querySelectorAll('[data-open]');
-const popupModal = document.querySelector('#mod1');
-const overlay = document.querySelector('.popup-overlay');
+const closeBtn = document.querySelector("#modal-close");
+const btn = document.querySelectorAll("[data-open]");
+const popupModal = document.querySelector("#mod1");
+const overlay = document.querySelector(".popup-overlay");
 
 btn.forEach((btnC) => {
-  btnC.addEventListener('click', () => {
-    popupModal.style.display = 'block';
-    overlay.style.display = 'block';
+  btnC.addEventListener("click", () => {
+    popupModal.style.display = "block";
+    overlay.style.display = "block";
   });
 });
 
-closeBtn.addEventListener('click', () => {
-  popupModal.style.display = 'none';
-  overlay.style.display = 'none';
+closeBtn.addEventListener("click", () => {
+  popupModal.style.display = "none";
+  overlay.style.display = "none";
 });
 
-const nameError = document.querySelector('.fname-error');
-const emailError = document.querySelector('.email-error');
-const messageError = document.querySelector('.message-error');
-const submitError = document.querySelector('.submit-error');
-const successN = document.querySelector('#successN');
-const successE = document.querySelector('#successE');
-const successM = document.querySelector('#successM');
-const fname = document.querySelector('#fname');
-const emailN = document.querySelector('#email');
-const messageV = document.querySelector('#message');
-const dataform = document.getElementById('form');
+const nameError = document.querySelector(".fname-error");
+const emailError = document.querySelector(".email-error");
+const messageError = document.querySelector(".message-error");
+const submitError = document.querySelector(".submit-error");
+const successN = document.querySelector("#successN");
+const successE = document.querySelector("#successE");
+const successM = document.querySelector("#successM");
+const fname = document.querySelector("#fname");
+const emailN = document.querySelector("#email");
+const messageV = document.querySelector("#message");
+const dataform = document.getElementById("form");
 /*= =============localstorage============= */
 function storeData() {
-  dataform.addEventListener('input', () => {
+  dataform.addEventListener("input", () => {
     const dataInput = {
       userName: fname.value,
       userEmail: emailN.value,
       message: messageV.value,
     };
-    localStorage.setItem('dataInput', JSON.stringify(dataInput));
+    localStorage.setItem("dataInput", JSON.stringify(dataInput));
   });
 }
 
 function deserialize() {
-  const loadData = JSON.parse(localStorage.getItem('dataInput'));
+  const loadData = JSON.parse(localStorage.getItem("dataInput"));
   fname.value = loadData.userName;
   emailN.value = loadData.userEmail;
   messageV.value = loadData.message;
@@ -146,21 +147,21 @@ deserialize();
 function validateName() {
   const nameVal = fname.value;
   if (nameVal.length === 0) {
-    nameError.innerHTML = '';
-    successN.innerHTML = '';
+    nameError.innerHTML = "";
+    successN.innerHTML = "";
     return false;
   }
   if (!nameVal.match(/^[a-zA-Z]+ [a-zA-Z]+$/)) {
-    nameError.innerHTML = '';
-    nameError.innerHTML = 'Please Enter Fullnames';
-    successN.innerHTML = '';
+    nameError.innerHTML = "";
+    nameError.innerHTML = "Please Enter Fullnames";
+    successN.innerHTML = "";
     return false;
   }
   if (nameVal.match(/^[a-zA-Z]+ [a-zA-Z]+$/) && nameVal.length > 0) {
-    nameError.innerHTML = '';
+    nameError.innerHTML = "";
     successN.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
   }
-  nameError.innerHTML = '';
+  nameError.innerHTML = "";
   successN.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
   return true;
 }
@@ -168,23 +169,23 @@ function validateName() {
 function validateEmail() {
   const emailVal = emailN.value;
   if (emailVal.length === 0) {
-    emailError.innerHTML = 'Email is Required';
-    successE.innerHTML = '';
+    emailError.innerHTML = "Email is Required";
+    successE.innerHTML = "";
     return false;
   }
 
   if (emailVal !== emailVal.toLowerCase()) {
-    emailError.innerHTML = 'Invalid email adress (lowercase only)';
-    successE.innerHTML = '';
+    emailError.innerHTML = "Invalid email adress (lowercase only)";
+    successE.innerHTML = "";
     return false;
   }
 
   if (!emailVal.match(/^[a-z+|]+@+[a-z\-0-9]+(.com)$/i)) {
-    emailError.innerHTML = 'Enter valid Email';
-    successE.innerHTML = '';
+    emailError.innerHTML = "Enter valid Email";
+    successE.innerHTML = "";
     return false;
   }
-  emailError.innerHTML = '';
+  emailError.innerHTML = "";
   successE.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
   return true;
 }
@@ -195,10 +196,10 @@ function validateMessage() {
   const left = required - messageVal.length;
   if (left > 0) {
     messageError.innerHTML = `${left} More characters is Required`;
-    successE.innerHTML = ' ';
+    successE.innerHTML = " ";
     return false;
   }
-  messageError.innerHTML = '';
+  messageError.innerHTML = "";
   successM.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
 
   return true;
@@ -206,10 +207,10 @@ function validateMessage() {
 
 function validateForm() {
   if (!validateName() || !validateEmail() || !validateMessage()) {
-    submitError.style.display = 'block';
-    submitError.innerHTML = 'Please fix the errors first before submit';
+    submitError.style.display = "block";
+    submitError.innerHTML = "Please fix the errors first before submit";
     setTimeout(() => {
-      submitError.style.display = 'none';
+      submitError.style.display = "none";
     }, 3000);
     return false;
   }

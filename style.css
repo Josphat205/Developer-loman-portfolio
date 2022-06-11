@@ -288,6 +288,11 @@ nav ul li a:hover {
   grid-gap: 4% 2%;
   margin: 6% 0;
   grid-template-areas: "image1 content1";
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+
+.feature:nth-child(even) {
+  grid-auto-flow: dense;
 }
 
 .images {
@@ -474,30 +479,31 @@ textarea::placeholder {
 .popup-overlay {
   left: 0;
   top: 0;
+  bottom: 0;
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   z-index: 100;
-  display: none;
+  display: block;
 }
 
 .popup {
-  margin: 10px 0;
-  position: fixed;
-  top: -42%;
-  left: 50%;
-  transform: translate(-50%, 50%);
+  position: absolute;
+  transform: translate(0%, 0%);
+  left: 10%;
   width: 80%;
+  height: 90vh;
+  margin: 20px auto;
   background: rgba(255, 255, 255, 0.16);
   border: 1px solid #fff;
   box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
   z-index: 1000;
   color: #fff;
-  display: none;
+  display: block;
   transition: display 1s linear;
   backdrop-filter: blur(50px);
-  padding-bottom: 40px;
+  padding-bottom: 80px;
 }
 
 .close-btn {
@@ -628,25 +634,23 @@ textarea::placeholder {
   }
 
   .circle1 {
-    position: fixed;
     width: 220px;
     height: 200px;
     left: -156px;
     top: 190px;
     display: block;
     z-index: 777;
-    opacity: 1;
+    opacity: 0.5;
   }
 
   .circle2 {
-    position: fixed;
     width: 148px;
     height: 268px;
     left: 280px;
     top: 445px;
     display: block;
     z-index: 999;
-    opacity: 1;
+    opacity: 0.5;
   }
 
   .my-name {
@@ -769,6 +773,9 @@ textarea::placeholder {
     grid-template-columns: 1fr;
     grid-gap: 5%;
     margin-bottom: 25%;
+    padding-bottom: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
     grid-template-areas:
       "image1"
       "content1";
@@ -778,6 +785,13 @@ textarea::placeholder {
     margin: auto;
     width: 80%;
     margin-top: 8rem;
+  }
+
+  .descrpt {
+    color: white;
+    z-index: 1;
+    font-style: normal;
+    font-size: 15px;
   }
 
   .names {
@@ -809,24 +823,28 @@ textarea::placeholder {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 100;
+    background: rgba(51, 49, 49, 0.8);
+    z-index: 10;
     display: none;
+    backdrop-filter: blur(50px);
   }
 
   .popup {
-    margin: 0 auto;
-    padding: 0 2px;
     position: absolute;
-    top: -32%;
-    transform: translate(-50%, 50%);
+    transform: translate(0%, 0%);
+    left: 4%;
     width: 80%;
-    background-color: #191765;
-    border: 1px solid white;
+    top: 70px;
+    height: 90vh;
+    margin: 0 auto;
+    background: rgba(5, 5, 5, 0.16);
+    border: 1px solid #fff;
+    box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
     z-index: 1000;
     color: #fff;
-    display: none;
+    display: block;
     transition: display 1s linear;
+    padding-bottom: 60px;
   }
 
   .close-btn {
@@ -854,6 +872,7 @@ textarea::placeholder {
 
   .popup-body {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -881,10 +900,6 @@ textarea::placeholder {
 
   .descrption-div p {
     font-size: 13px;
-  }
-
-  .descrpt {
-    font-size: 15px;
   }
 
   .img-popup-div {
