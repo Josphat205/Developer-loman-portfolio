@@ -179,7 +179,7 @@ function validateEmail() {
     return false;
   }
 
-  if (!emailVal.match(/^[a-z+|]+@+[a-z\-0-9]+(.com)$/i)) {
+  if (!emailVal.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
     emailError.innerHTML = 'Enter valid Email';
     successE.innerHTML = '';
     return false;

@@ -274,7 +274,7 @@ nav ul li a:hover {
 
 .main-container {
   margin: auto;
-  width: 80%;
+  width: 90%;
   margin-top: 15%;
 }
 
@@ -427,6 +427,7 @@ form {
 input[type="text"] {
   width: 100%;
   height: 4.5rem;
+  font-size: 12px;
   margin-top: 1.5%;
   background-color: #fff;
 }
@@ -434,6 +435,7 @@ input[type="text"] {
 input[type="email"] {
   background-color: #fff;
   width: 100%;
+  font-size: 12px;
   height: 4.5rem;
   margin-top: 1.5%;
 }
@@ -441,6 +443,7 @@ input[type="email"] {
 textarea {
   width: 100%;
   height: 10rem;
+  font-size: 12px;
   margin-top: 1.5%;
   background-color: #fff;
 }
@@ -483,26 +486,24 @@ textarea::placeholder {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(114, 109, 109, 0.5);
   z-index: 100;
-  display: block;
+  backdrop-filter: blur(50px);
+  display: none;
 }
 
 .popup {
-  position: absolute;
   transform: translate(0%, 0%);
   left: 10%;
-  width: 80%;
-  height: 90vh;
-  margin: 20px auto;
-  background: rgba(255, 255, 255, 0.16);
+  width: 90%;
+  margin: 15px auto;
+  background: black;
   border: 1px solid #fff;
   box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
   z-index: 1000;
   color: #fff;
-  display: block;
+  display: none;
   transition: display 1s linear;
-  backdrop-filter: blur(50px);
   padding-bottom: 80px;
 }
 
@@ -541,7 +542,7 @@ textarea::placeholder {
 }
 
 .descrption-div {
-  width: 60%;
+  width: 90%;
   z-index: 1000;
 }
 
@@ -587,6 +588,10 @@ textarea::placeholder {
 
 /* ----------media query-------- */
 @media only screen and (max-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+
   nav {
     width: 100vw;
     flex-wrap: wrap;
@@ -834,7 +839,7 @@ textarea::placeholder {
     transform: translate(0%, 0%);
     left: 4%;
     width: 80%;
-    top: 70px;
+    top: 60px;
     height: 90vh;
     margin: 0 auto;
     background: rgba(5, 5, 5, 0.16);
@@ -879,7 +884,6 @@ textarea::placeholder {
     width: 80%;
     margin: 0 auto;
     overflow: hidden;
-    overflow-y: scroll;
   }
 
   .row5 {
