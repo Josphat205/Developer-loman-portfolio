@@ -7,7 +7,7 @@ CSS<br />
 IONICICONS<br />
 
 Live Demo (for my portfolio)<br />
-https://josphat205.github.io/SmartDeveloper/<br />
+https://josphat205.github.io/Developer-loman-portfolio/<br />
 
 Getting Started<br />
 This is an example of how you may give instructions on setting up your project locally. Modify this<br /> file to match your project, remove sections that don't apply. For example: delete the <br />testing section if the currect project doesn't require testing.<br />
